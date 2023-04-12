@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(248, 94, 47);
+    background-color: rgb(252, 88, 38);
+    display: flex;
 }
 
 .container {
@@ -19,9 +20,22 @@ body {
     justify-content: center;
     align-items: center;
     margin: auto;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    box-shadow: 10px 10px 5px #423434;
 }
 
 .box > h1 {
     margin-top: 0;
     color: #e3c525;
+}
+
+.tools {
+    height: 200px;
+    width: 250px;
+    background-color: #9c7e7e;
+    border-radius: 10px;
+    margin-top: 60vh;
+    border-style: solid;
 }
