@@ -17,7 +17,8 @@ function createGrid() {
 //add grid style
 function grid() {
     for(let i = 0; i < (size*size); i++) {
-    divs[i].style.cssText = `width: calc(${100}%/${size}); background-color: #e1e6e5; border-color: black; border-style: solid; border-width: 1px; box-sizing: border-box;`;
+    divs[i].style.cssText = `width: calc(${100}%/${size});`;
+    divs[i].classList.toggle("gStyle");
 }
 }
 
@@ -41,7 +42,21 @@ btn.addEventListener("click", () => {
     size = parseInt(prompt("Enter the grid size: "));
     createGrid();
     grid();
-})
+    sketch();
+});
+
+//change color of grid square on hover
+function sketch() {
+    divs.forEach((div) => {
+        div.addEventListener("mouseover", () => {
+            console.log("bruh");
+            div.classList.add("gSketch");
+        });
+    });
+}
+
+sketch();
+
 
 
 
