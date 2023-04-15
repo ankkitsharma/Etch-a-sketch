@@ -1,6 +1,8 @@
 const container = document.querySelector(".container");
 
-const btn = document.querySelector(".chGrid");
+const chGridbtn = document.querySelector(".chGrid");
+
+const clearGrid = document.querySelector(".clearGrid");
 
 let size = 16; //default grid size 16*16
 
@@ -37,7 +39,7 @@ createGrid();
 grid();
 
 //change grid
-btn.addEventListener("click", () => {
+chGridbtn.addEventListener("click", () => {
     deleteGrid();
     size = parseInt(prompt("Enter the grid size: "));
     createGrid();
@@ -54,6 +56,13 @@ function sketch() {
         });
     });
 }
+
+//clear grid
+clearGrid.addEventListener("click", () => {
+    for(let i = 0; i < (size*size); i++) {
+        divs[i].classList.remove("gSketch");
+}
+})
 
 sketch();
 
