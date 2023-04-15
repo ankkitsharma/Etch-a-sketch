@@ -40,11 +40,19 @@ grid();
 
 //change grid
 chGridbtn.addEventListener("click", () => {
-    deleteGrid();
-    size = parseInt(prompt("Enter the grid size: "));
-    createGrid();
-    grid();
-    sketch();
+    let sz = (prompt("Enter the grid size: "));
+    if (sz == null) {
+        return;
+    } else if (sz > 100) {
+        alert("Grid size more than 100 not supported.");
+    } else {
+        deleteGrid();
+        size = sz;
+        createGrid();
+        grid();
+        sketch();
+    }
+    
 });
 
 //change color of grid square on hover
@@ -57,6 +65,8 @@ function sketch() {
     });
 }
 
+sketch();
+
 //clear grid
 clearGrid.addEventListener("click", () => {
     for(let i = 0; i < (size*size); i++) {
@@ -64,7 +74,6 @@ clearGrid.addEventListener("click", () => {
 }
 })
 
-sketch();
 
 
 
